@@ -2,11 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:mood_journal_app/constants/colors.dart';
 import 'package:mood_journal_app/constants/fonts.dart';
 import 'package:mood_journal_app/constants/spacing.dart';
-import 'package:mood_journal_app/pages/login/components/login_form.dart';
-import 'package:mood_journal_app/pages/login/components/social_logins.dart';
+import 'package:mood_journal_app/pages/signup/components/signup_form.dart';
 
-class LoginPage extends StatelessWidget {
-  LoginPage({super.key});
+class SignupPage extends StatelessWidget {
+  SignupPage({super.key});
 
   final _formKey = GlobalKey<FormState>();
 
@@ -24,29 +23,20 @@ class LoginPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "Sign in",
+                  "Sign Up",
                   style: AppTextStyles.heading(),
                 ),
                 AppSpacing.verticalSpace(10.0),
                 Text(
-                  "Register Here !",
+                  "Login Here !",
                   style: AppTextStyles.subtitle(
                     color: AppColors.primary,
                   ),
                 ),
                 AppSpacing.verticalSpace(32.0),
-                LoginForm(formKey: _formKey),
-                AppSpacing.verticalSpace(16.0),
-                Center(
-                  child: Text(
-                    "or continue with",
-                    style: AppTextStyles.subtitle(
-                      color: AppColors.textLight,
-                    ),
-                  ),
-                ),
-                AppSpacing.verticalSpace(16.0),
-                SocialLogins()
+                SignupForm(
+                  formKey: _formKey,
+                )
               ],
             ),
           ),

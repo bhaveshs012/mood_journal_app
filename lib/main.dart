@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mood_journal_app/constants/colors.dart';
 import 'package:mood_journal_app/pages/login/login.dart';
+import 'package:mood_journal_app/pages/signup/signup.dart';
 import 'package:sizer/sizer.dart';
 
 void main() {
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
             scaffoldBackgroundColor: AppColors.background,
           ),
           debugShowCheckedModeBanner: false,
-          home: LoginPage(),
+          home: SignupPage(),
           // home: OnboardingPage(
           //   assetNumber: "3",
           //   heading: "Welcome to SoulScript",

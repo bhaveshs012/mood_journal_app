@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:mood_journal_app/constants/colors.dart';
-import 'package:mood_journal_app/constants/fonts.dart';
 import 'package:sizer/sizer.dart';
 
 class CTAButton extends StatelessWidget {
