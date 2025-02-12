@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mood_journal_app/constants/colors.dart';
 import 'package:mood_journal_app/pages/login/login.dart';
 import 'package:mood_journal_app/pages/signup/signup.dart';
+import 'package:mood_journal_app/pages/splash/splash_screen.dart';
 import 'package:sizer/sizer.dart';
 
 void main() {
