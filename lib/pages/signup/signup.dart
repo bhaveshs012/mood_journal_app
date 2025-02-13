@@ -5,9 +5,7 @@ import 'package:mood_journal_app/constants/spacing.dart';
 import 'package:mood_journal_app/pages/signup/components/signup_form.dart';
 
 class SignupPage extends StatelessWidget {
-  SignupPage({super.key});
-
-  final _formKey = GlobalKey<FormState>();
+  const SignupPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -34,9 +32,7 @@ class SignupPage extends StatelessWidget {
                   ),
                 ),
                 AppSpacing.verticalSpace(32.0),
-                SignupForm(
-                  formKey: _formKey,
-                )
+                SignupForm()
               ],
             ),
           ),

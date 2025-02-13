@@ -49,6 +49,7 @@ android {
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
+        resValue "string", "appwrite_project_id", localProperties['APPWRITE_PROJECT_ID']
     }
 
     buildTypes {
