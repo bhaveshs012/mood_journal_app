@@ -8,7 +8,7 @@
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="appwrite-callback-${appwriteProjectId}" />
+                <data android:scheme="appwrite-callback-@string/appwrite_project_id" />
             </intent-filter>
         </activity>
         <activity

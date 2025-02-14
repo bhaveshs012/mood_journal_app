@@ -45,11 +45,17 @@ android {
         applicationId "com.example.mood_journal_app"
         // You can update the following values to match your application needs.
         // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-gradle-build-configuration.
-        minSdkVersion 21
+        minSdkVersion 23
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
-        resValue "string", "appwrite_project_id", localProperties['APPWRITE_PROJECT_ID']
+        
+        // Read APPWRITE_PROJECT_ID from local.properties
+        def projectId = localProperties['APPWRITE_PROJECT_ID']
+        if (projectId == null || projectId.isEmpty()) {
+            throw new GradleException("APPWRITE_PROJECT_ID is missing in local.properties")
+        }
+        resValue "string", "appwrite_project_id", projectId
     }
 
     buildTypes {

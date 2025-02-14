@@ -6,15 +6,29 @@ class Validator {
     return null;
   }
 
-  static bool checkEmail(String? value) {
+  static String? checkEmail(String? value) {
     if (value == null || value.isEmpty) {
-      return false;
+      return "Email cannot be empty";
     }
-    final emailRegex = RegExp(
-        r"/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g");
+    final emailRegex = RegExp(r"^[\w\.-]+@[\w\.-]+\.\w{2,}$");
     if (!emailRegex.hasMatch(value)) {
-      return false;
+      return "Please enter a valid email";
     }
-    return true;
+    return null;
+  }
+
+  static String? checkPassword(String? value) {
+    if (value == null || value.isEmpty) {
+      return "Password cannot be empty";
+    }
+    if (value.length < 8 || value.length > 15) {
+      return "The password must be of the size 8 to 15";
+    }
+    final passRegex =
+        RegExp(r"^(?=.{8,})(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$");
+    if (!passRegex.hasMatch(value)) {
+      return "Password should be at least one capital letter, \none small letter, one number and 8 character length";
+    }
+    return null;
   }
 }

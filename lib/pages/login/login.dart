@@ -35,7 +35,7 @@ class LoginPage extends StatelessWidget {
                   ),
                 ),
                 AppSpacing.verticalSpace(32.0),
-                LoginForm(formKey: _formKey),
+                LoginForm(),
                 AppSpacing.verticalSpace(16.0),
                 Center(
                   child: Text(

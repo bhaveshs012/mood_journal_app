@@ -10,6 +10,7 @@ class AppColors {
   static const Color accentYellow = Color(0xFFF9E79F); // Pastel yellow
   static const Color accentBlue = Color(0xFF143D60); // Soft pastel blue
   static const Color accentLavender = Color(0xFFD4A5C9); // Soft lavender
+  static const Color accentRed = Color(0xFFAF1740);
 
   // 🖤 Text Colors
   static const Color textDark = Color(0xFF37474F); // Deep gray for dark mode

@@ -7,10 +7,12 @@ class CTAButton extends StatelessWidget {
   final VoidCallback onPressed;
   final Color color;
   final Color textColor;
+  final isDisabled;
   const CTAButton(
       {super.key,
       required this.text,
       required this.onPressed,
+      this.isDisabled = false,
       this.color = AppColors.primary,
       this.textColor = AppColors.textDark});
 
@@ -25,7 +27,7 @@ class CTAButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(12),
           ),
         ),
-        onPressed: onPressed,
+        onPressed: isDisabled ? null : onPressed,
         child: Padding(
           padding: const EdgeInsets.all(12.0),
           child: Text(

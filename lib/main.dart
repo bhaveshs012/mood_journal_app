@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:mood_journal_app/auth/auth_controller.dart';
 import 'package:mood_journal_app/bindings/app_bindings.dart';
 import 'package:mood_journal_app/constants/colors.dart';
 import 'package:mood_journal_app/pages/home/home.dart';
+import 'package:mood_journal_app/pages/login/login.dart';
+import 'package:mood_journal_app/pages/signup/signup.dart';
 import 'package:sizer/sizer.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
@@ -28,14 +31,11 @@ class MyApp extends StatelessWidget {
               scaffoldBackgroundColor: AppColors.background,
             ),
             debugShowCheckedModeBanner: false,
-            home: HomeScreen(),
-            // home: OnboardingPage(
-            //   assetNumber: "3",
-            //   heading: "Welcome to SoulScript",
-            //   subtitle: "Your personal space for reflection and growth",
-            //   onPressed: () => {},
-            //   ctaText: "Get Started",
-            // ),
+            home: Obx(() {
+              return Get.find<AuthController>().currentUser.value == null
+                  ? LoginPage()
+                  : HomeScreen();
+            }),
           );
         },
       ),
